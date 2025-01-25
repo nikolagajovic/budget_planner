@@ -18,6 +18,12 @@ body {
     overflow: hidden;
 }
 
+main {
+    flex-grow: 1;
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
 .side-nav {
     background-color: var(--primary-color);
     display: flex;
@@ -59,3 +65,96 @@ body {
     }
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.budget-summary {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #fcf8f5;
+    border-radius: 15px;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+.income,
+.expenses,
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dollar {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.income-amount,
+.expenses-amount,
+.left-amount {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.income-lbl,
+.expenses-lbl,
+.left-lbl {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.categories {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    background-color: #fcf8f5;
+    border-radius: 15px;
+}
+
+.category-title {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 10px;
+    width: 190px;
+}
+
+.shopping,
+.food,
+.drinks,
+.entertainment {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 2rem;
+}
+
+.add-btn {
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 80px;
+    border-radius: 100%;
+    margin: auto;
+    margin-top: 50px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #3E5879;
+    }
+
+    &:active {
+        background-color: #213555;
+        transform: rotate(40deg);
+        transition: transform 0.03s ease;
+    }
+    
+}
