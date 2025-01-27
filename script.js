@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 const openNewTransactionBtn = document.getElementById('openNewTransactionBtn');
 const newTransaction = document.getElementById('newTransaction');
-const closeBtn = document.getElementsByClassName('close-btn')[0];
+const closeBtn = document.getElementsByClassName('btn-transaction-close')[0];
 
 openNewTransactionBtn.onclick = function () {
     newTransaction.style.display = 'block';

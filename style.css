@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -42,7 +42,7 @@ main {
         cursor: pointer;
     }
 
-    
+
     & a {
         display: block;
         width: 100%;
@@ -154,7 +154,7 @@ main {
         background-color: var(--text-color);
         transform: rotate(40deg);
     }
-    
+
 }
 
 .new-transaction {
@@ -169,7 +169,7 @@ main {
 
 .new-transaction-content {
     display: flex;
-    background-color: var(--secondary-color);
+    background-color: var(--background-color);
     margin: 10% auto;
     width: 500px;
     padding: 10px;
@@ -177,13 +177,85 @@ main {
     align-items: center;
     flex-direction: column;
     position: relative;
+    border-radius: 10px;
 }
 
-.close-btn {
+.btn-transaction-close {
     font-size: 30px;
     cursor: pointer;
     position: absolute;
     top: 0px;
     right: 10px;
-  }
+}
 
+.transaction-amount {
+    margin-top: 20px;
+    font-size: 3.5rem;
+
+    & .transaction-amount-input {
+        border: none;
+        outline: none;
+        field-sizing: content;
+        min-width: 50px;
+        max-width: 200px; 
+        font-size: 4.5rem;
+        text-align: center;
+        background-color: var(--background-color);
+    }
+
+}
+
+.transaction-type {
+    display: flex;
+    gap: 5rem;
+    margin-top: 20px;
+}
+
+.transaction-expense, .transaction-income {
+    border: none;
+    outline: none;
+    background-color: var(--background-color);
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-radius: 25px;
+    padding: 10px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--secondary-color);
+    }
+
+    &:active {
+        background-color: #e5d1c2;
+    }
+}
+
+.transaction-note {
+    margin-top: 20px;
+    font-size: 2rem;
+    background-color: var(--secondary-color);
+    border: none;
+    outline: none;
+    padding: 15px;
+    width: 80%;
+}
+
+.btn-transaction-save {
+    margin: 20px 0 10px 0;
+    padding: 15px;
+    font-size: 2rem;
+    width: 80%;
+    border-radius: 30px;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #234168;
+    }
+
+    &:active {
+        background-color: var(--text-color);
+    }
+}
