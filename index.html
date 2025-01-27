@@ -77,9 +77,17 @@
                         <button class="transaction-expense">expense</button>
                         <button class="transaction-income">income</button>
                     </div>
-                    <hr style="width: 100%; margin: 1rem 0; border: 1px solid black;">
+
+                    <hr style="width: 100%; margin-top: 20px; border: 1px solid black;">
+
                     <div class="transaction-category">
-                        <label>dropdown</label>
+                        <label for="category">Category:</label>
+                        <select id="category" class="category" name="category">
+                            <option value="shopping">Shopping</option>
+                            <option value="food">Food</option>
+                            <option value="drinks">Drinks</option>
+                            <option value="entertainment">Entertainment</option>
+                        </select>
                     </div>
 
                     <input type="text" placeholder="Note" class="transaction-note">

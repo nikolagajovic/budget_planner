@@ -231,17 +231,38 @@ main {
 }
 
 .transaction-note {
-    margin-top: 20px;
     font-size: 2rem;
-    background-color: var(--secondary-color);
+    background-color: var(--background-color);
     border: none;
     outline: none;
     padding: 15px;
+    margin-top: 10px;
     width: 80%;
+    border-bottom: 1px solid #000;
+}
+
+.transaction-category {
+    margin-top: 20px;
+    display: flex;
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 80%;
+    gap: 20px;
+    padding: 15px;
+    font-size: 2rem;
+    
+    & .category {
+        border: none;
+        outline: none;
+        background-color: var(--background-color);
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
 }
 
 .btn-transaction-save {
-    margin: 20px 0 10px 0;
+    margin: 40px 0 10px 0;
     padding: 15px;
     font-size: 2rem;
     width: 80%;
