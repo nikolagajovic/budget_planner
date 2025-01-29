@@ -12,16 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const transactionCategory = document.querySelector('.transaction-category');
-  const addIncome = document.querySelector('.transaction-income');
-  const addExpense = document.querySelector('.transaction-expense');
+  const transactionCategoryIncome = document.querySelector('.transaction-category-income');
+  const selectIncome = document.querySelector('.transaction-income');
+  const selectExpense = document.querySelector('.transaction-expense');
 
-  addIncome.addEventListener('click', () => {
+  selectIncome.addEventListener('click', () => {
     transactionCategory.style.display = 'none';
+    transactionCategoryIncome.style.display = 'flex';
     addIncome.style.backgroundColor = 'var(--secondary-color)';
     addExpense.style.backgroundColor = 'var(--background-color)';
   });
 
-  addExpense.addEventListener('click', () => {
+  selectExpense.addEventListener('click', () => {
     transactionCategory.style.display = 'flex';
     addExpense.style.backgroundColor = 'var(--secondary-color)';
     addIncome.style.backgroundColor = 'var(--background-color)';

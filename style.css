@@ -262,6 +262,26 @@ main {
     }
 }
 
+.transaction-category-income {
+    margin-top: 20px;
+    display: none;
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 80%;
+    gap: 5px;
+    padding: 10px;
+    font-size: 2rem;
+    
+    & .category-income {
+        border: none;
+        outline: none;
+        background-color: var(--background-color);
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
 .btn-transaction-save {
     margin: 40px 0 10px 0;
     padding: 15px;
