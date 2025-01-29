@@ -192,6 +192,8 @@ main {
 .transaction-amount {
     margin-top: 20px;
     font-size: 3.5rem;
+    display: flex;
+    gap: 10px;
 
     & .transaction-amount-input {
         border: none;
@@ -203,7 +205,15 @@ main {
         text-align: center;
         background-color: var(--background-color);
     }
+    
+}
 
+.transaction-amount-input::-webkit-inner-spin-button,
+.transaction-amount-input::-webkit-outer-spin-button {
+    -webkit-appearance: none; 
+    appearance: none ;
+    margin: 0 ;
+    display: none ;
 }
 
 .transaction-type {
@@ -248,7 +258,7 @@ main {
     border: none;
     border-bottom: 1px solid #000;
     width: 80%;
-    gap: 5px;
+    gap: 10px;
     padding: 10px;
     font-size: 2rem;
     
@@ -256,9 +266,22 @@ main {
         border: none;
         outline: none;
         background-color: var(--background-color);
-        font-size: 2rem;
+        font-size: 1.9rem;
         font-weight: bold;
         cursor: pointer;
+        appearance: none;
+        width: 100%;
+        text-align: center;
+
+        &:hover {
+            border-radius: 10px;
+            background-color: #d1cac2;
+            width: 100%;
+        }
+
+        &:active {
+            background-color: #e6dfd7;
+        }
     }
 }
 
@@ -268,7 +291,7 @@ main {
     border: none;
     border-bottom: 1px solid #000;
     width: 80%;
-    gap: 5px;
+    gap: 20px;
     padding: 10px;
     font-size: 2rem;
     
@@ -279,6 +302,19 @@ main {
         font-size: 2rem;
         font-weight: bold;
         cursor: pointer;
+        appearance: none;
+        width: 100%;
+        text-align: center;
+
+        &:hover {
+            border-radius: 10px;
+            background-color: #d1cac2;
+            width: 100%;
+        }
+
+        &:active {
+            background-color: #e6dfd7;
+        }
     }
 }
 

@@ -19,14 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
   selectIncome.addEventListener('click', () => {
     transactionCategory.style.display = 'none';
     transactionCategoryIncome.style.display = 'flex';
-    addIncome.style.backgroundColor = 'var(--secondary-color)';
-    addExpense.style.backgroundColor = 'var(--background-color)';
+    selectIncome.style.backgroundColor = 'var(--secondary-color)';
+    selectExpense.style.backgroundColor = 'var(--background-color)';
   });
 
   selectExpense.addEventListener('click', () => {
     transactionCategory.style.display = 'flex';
-    addExpense.style.backgroundColor = 'var(--secondary-color)';
-    addIncome.style.backgroundColor = 'var(--background-color)';
+    transactionCategoryIncome.style.display = 'none';
+    selectExpense.style.backgroundColor = 'var(--secondary-color)';
+    selectIncome.style.backgroundColor = 'var(--background-color)';
   });
 
 });
