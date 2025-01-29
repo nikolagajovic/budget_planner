@@ -125,13 +125,14 @@ main {
     width: 190px;
 }
 
-.shopping,
-.food,
-.drinks,
-.entertainment {
+.cat-income,
+.cat-shopping,
+.cat-food,
+.cat-drinks,
+.cat-entertainment {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 15px;
     font-size: 2rem;
 }
 
@@ -143,7 +144,7 @@ main {
     font-size: 80px;
     border-radius: 100%;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 30px;
 
     &:hover {
         cursor: pointer;
