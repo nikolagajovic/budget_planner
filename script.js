@@ -30,5 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
     selectIncome.style.backgroundColor = 'var(--background-color)';
   });
 
-});
 
+  let totalIncome = 0;
+  let totalExpense = 0;
+  let selectedType = 'income';
+
+  const addIncomeBtn = document.querySelector('.transaction-income');
+
+
+  // kad kliknemo na dugme, postavljam oda je selektovan prihod
+  addIncomeBtn.addEventListener('click', () => {
+    selectedType = 'income';
+    transactionCategory.style.display = 'none';
+    transactionCategoryIncome.style.display = 'flex';
+  });
+
+  });
