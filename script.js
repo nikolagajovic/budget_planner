@@ -38,11 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const addIncomeBtn = document.querySelector('.transaction-income');
 
 
-  // kad kliknemo na dugme, postavljam oda je selektovan prihod
+  // kad kliknemo na dugme "income", postavljam oda je selektovan prihod
   addIncomeBtn.addEventListener('click', () => {
     selectedType = 'income';
     transactionCategory.style.display = 'none';
     transactionCategoryIncome.style.display = 'flex';
   });
 
+  // kad kliknemo na dugme "expense", postavljam oda je selektovan rashod 
+  addExpenseBtn.addEventListener('click', () => {
+    selectedType = 'expense';
+    transactionCategory.style.display = 'flex';
+    transactionCategoryIncome.style.display = 'none';
   });
+
+});
