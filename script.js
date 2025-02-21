@@ -2,6 +2,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const openNewTransactionBtn = document.getElementById('openNewTransactionBtn');
   const newTransaction = document.getElementById('newTransaction');
   const closeBtn = document.querySelector('.btn-transaction-close');
+  const addIncomeBtn = document.querySelector('.transaction-income');
+  const addExpenseBtn = document.querySelector('.transaction-expense');
+  const transactionCategory = document.querySelector('.transaction-category');
+  const transactionCategoryIncome = document.querySelector('.transaction-category-income');
+  const saveTransactionBtn = document.querySelector('.btn-transaction-save');
+  const transactionAmountInput = document.querySelector('.transaction-amount-input');
+  const categorySelect = document.querySelector('.category');
+  const incomeAmountLabel = document.querySelector('.income-amount');
+  const expensesAmountLabel = document.querySelector('.expenses-amount');
+  const leftAmountLabel = document.querySelector('.left-amount');
+  const categoryAmounts = {
+    shopping: document.querySelector('.cat-shopping-amount'),
+    food: document.querySelector('.cat-food-amount'),
+    drinks: document.querySelector('.cat-drinks-amount'),
+    entertainment: document.querySelector('.cat-entertainment-amount'),
+    income: document.querySelector('.cat-income-amount')
+  };
+  let totalIncome = 0;
+  let totalExpenses = 0;
+  let selectedType = 'income';
 
   openNewTransactionBtn.addEventListener('click', () => {
     newTransaction.style.display = 'block';
@@ -11,32 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     newTransaction.style.display = 'none';
   });
 
-  const transactionCategory = document.querySelector('.transaction-category');
-  const transactionCategoryIncome = document.querySelector('.transaction-category-income');
-  const selectIncome = document.querySelector('.transaction-income');
-  const selectExpense = document.querySelector('.transaction-expense');
-
-  selectIncome.addEventListener('click', () => {
-    transactionCategory.style.display = 'none';
-    transactionCategoryIncome.style.display = 'flex';
-    selectIncome.style.backgroundColor = 'var(--secondary-color)';
-    selectExpense.style.backgroundColor = 'var(--background-color)';
-  });
-
-  selectExpense.addEventListener('click', () => {
-    transactionCategory.style.display = 'flex';
-    transactionCategoryIncome.style.display = 'none';
-    selectExpense.style.backgroundColor = 'var(--secondary-color)';
-    selectIncome.style.backgroundColor = 'var(--background-color)';
-  });
-
-
-  let totalIncome = 0;
-  let totalExpense = 0;
-  let selectedType = 'income';
-
-  const addIncomeBtn = document.querySelector('.transaction-income');
-
 
   // kad kliknemo na dugme "income", postavljam oda je selektovan prihod
   addIncomeBtn.addEventListener('click', () => {
@@ -45,11 +39,42 @@ document.addEventListener('DOMContentLoaded', () => {
     transactionCategoryIncome.style.display = 'flex';
   });
 
-  // kad kliknemo na dugme "expense", postavljam oda je selektovan rashod 
+  // kad kliknemo na dugme "expense", postavljamo da je selektovan trosak 
   addExpenseBtn.addEventListener('click', () => {
     selectedType = 'expense';
     transactionCategory.style.display = 'flex';
     transactionCategoryIncome.style.display = 'none';
   });
 
+  saveTransactionBtn.addEventListener('click', () => {
+    const amount = parseFloat(transactionAmountInput.value);
+    if (isNaN(amount) || amount <= 0) return;
+
+    if (selectedType === 'income') {
+      totalIncome += amount;
+      incomeAmountLabel.innerHTML = `${totalIncome} <span class="dollar">$</span>`;
+      categoryAmounts.income.innerHTML = `${totalIncome} <span>$</span>`;
+    } else {
+      totalExpenses += amount;
+      expensesAmountLabel.innerHTML = `${totalExpenses} <span class="dollar">$</span>`;
+
+      const selectedCategory = categorySelect.value;
+      if (categoryAmounts[selectedCategory]) {
+        const currentAmount = parseFloat(categoryAmounts[selectedCategory].textContent) || 0;
+        categoryAmounts[selectedCategory].innerHTML = `${currentAmount + amount} <span>$</span>`;
+      }
+    }
+
+    // Ažuriramo preostali budžet
+    const remaining = totalIncome - totalExpenses;
+    leftAmountLabel.innerHTML = `${remaining} <span class="dollar">$</span>`;
+
+    // Resetujemo polje unosa
+    transactionAmountInput.value = '';
+  });
+
+
 });
+
+
+
