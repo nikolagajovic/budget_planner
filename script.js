@@ -83,7 +83,7 @@ saveTransactionBtn.addEventListener('click', () => {
     type: selectedType,
     category: selectedType === 'income' ? "income" : categorySelect.value,
     note,
-    data: new Date().toISOString()
+    date: new Date().toISOString()
   };
 
   if (selectedType === 'income') {
