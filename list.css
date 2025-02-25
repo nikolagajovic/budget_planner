@@ -65,9 +65,28 @@ main {
 }
 
 .transaction-item {
-    background-color: #f9f9f9;
+    background-color: var(--secondary-color);
     padding: 1rem;
     margin-bottom: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
   }
+
+  .pagination-btn {
+    background-color: var(--primary-color); /* Plava boja */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: var(--text-color); 
+    }
+    
+    &:active {
+        background-color: #546a86;
+    }
+}
