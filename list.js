@@ -13,6 +13,9 @@ try {
 }
 
 const transactions = budgetData.transactions || [];
+
+transactions.sort((a, b) => new Date(b.date) - new Date(a.date));
+
 prevBtn.textContent = 'Previous page';
 nextBtn.textContent = 'Next page';
 prevBtn.classList.add('pagination-btn', 'prev-btn');

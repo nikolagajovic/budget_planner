@@ -21,7 +21,7 @@ const categoryAmounts = {
 };
 let totalIncome = 0;
 let totalExpenses = 0;
-let selectedType = 'income';
+let selectedType = '';
 
 // funkcija za ucitavanje podataka iz localStorage i azuriranje prikaza
 function loadBudgetData() {
