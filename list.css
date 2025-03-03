@@ -73,14 +73,14 @@ main {
   }
 
   .pagination-btn {
-    background-color: var(--primary-color); /* Plava boja */
-    color: white;
+    background-color: var(--primary-color); 
     border: none;
     padding: 10px 15px;
     margin: 10px;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
+    color: white;
 
     &:hover {
         background-color: var(--text-color); 
@@ -88,5 +88,73 @@ main {
     
     &:active {
         background-color: #546a86;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    
+    .side-nav {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+        position: static;
+    }
+    
+    .side-nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        margin: 0;
+    }
+    
+    .side-nav li {
+        padding: 5px;
+    }
+    
+    .side-nav a {
+        font-size: 18px;
+        padding: 5px 8px;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+    
+    .budget-summary {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .categories {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    .category-title {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .btn-new-transaction {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+    
+    .new-transaction-content {
+        width: 90%;
+        margin: 20% auto;
+        padding: 15px;
     }
 }
